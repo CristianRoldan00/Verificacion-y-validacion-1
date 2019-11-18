@@ -62,6 +62,7 @@ public Paciente() {
         modelo.addColumn("Correo");
         modelo.addColumn("Telefono");
         modelo.addColumn("Eps");
+        modelo.addColumn("Direccion");
            Conexion con = new Conexion();
         Connection cnx = con.conectar();
        
@@ -85,7 +86,7 @@ public Paciente() {
             fila[4] = rs.getString(5);
             fila[5] = rs.getString(6);
             fila[6] = rs.getString(7);
-        
+            fila[7] = rs.getString(7);
         modelo.addRow(fila);
         Tabla.setModel(modelo);
         
@@ -95,7 +96,7 @@ public Paciente() {
       txtCorreo.setText(fila[4]);
       txtTelefono.setText(fila[5]);
       cbxEps.setSelectedItem(fila[6]);
-                
+      txtDireccion.setText(fila[7]);          
             }
 
         } catch (SQLException ex) {
